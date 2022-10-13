@@ -1,0 +1,22 @@
+#using for login
+
+provider "aws" {
+
+	access_key = ""
+	secret_key = ""
+	region = "ap-south-1"
+
+}
+
+# resource name and resource type 
+resource "aws_instance" "os1" {
+
+ 	ami = "ami-06489866022e12a14"
+	instance_type = "t2.micro"
+	key_name = "Terraform"
+	vpc_security_group_ids = [ "sg-0dd3a8e19de252e2a" ]
+ 	tags =  {
+			Name = "os2"
+      	}
+
+}
